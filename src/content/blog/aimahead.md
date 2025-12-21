@@ -94,8 +94,6 @@ Finally, I needed a UI. I used ImGui because it's lightweight and easy to integr
 
 To get the look I really wanted, with unique outlines and window shapes, I had to go into the ImGui source code itself. I made modifications to the internal `Begin()` and `End()` window functions to change how the borders and backgrounds were rendered, giving me full control over the final look. It's overkill for most projects, but it was a fun exercise in understanding how a library you use every day actually works under the hood.
 
-![PoC](aimahead-ui.png)
-
 In the end, `AimAhead` became a case study in optimization. It's a demonstration that with the right approach—from the tedious work of data collection to low-level GPU memory management—you can build systems that operate at speeds the standard tools can't even touch.
 
 You can check out the source code for the project on [my GitHub](https://github.com/ShufflePerson/AimAhead).
