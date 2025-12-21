@@ -1,7 +1,7 @@
 ---
 title: "Building a 240 FPS Computer Vision Pipeline"
 description: "AI is usually slow. Games are fast. I wanted to build an inference pipeline that could keep up. This is the story of how I did it, from the data grind to the GPU memory tricks."
-pubDate: 2025-12-21
+pubDate: 2025-12-22
 heroImage: "aimbot-landing.png"
 socialImage: "./aimbot-small.png"
 tags: ["Computer Vision", "C++", "Optimization", "TensorRT", "DirectX"]
