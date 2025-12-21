@@ -6,9 +6,10 @@ heroImage: "gfn-landing.png"
 tags: ["Reverse Engineering", "Geforce Now", "Injection", "Windows"]
 ---
 
-### Escaping the Stream: How I Bypassed GeForce Now's Security to Run Custom Apps
+### How I Bypassed GeForce Now's Security to Run Custom Apps
 
 **Posted:** December 2025
+
 **Tags:** #ReverseEngineering, #GeForceNow, #ExploitDev, #MemoryInjection, #SandboxEscape
 
 So, GeForce Now is great for gaming, but underneath the stream, it's a digital fortress. Most people think it just has a basic anti-cheat, but that's not even close. GFN runs one of the most hardened consumer sandboxes I've ever seen, designed with one goal: the user should only ever be able to play the game. Nothing else. This is the story of how I found a crack in that fortress and blew the doors open.
