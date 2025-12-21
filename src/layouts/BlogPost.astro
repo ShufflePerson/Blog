@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -8,12 +8,47 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, socialImage } =
+	Astro.props;
+
+// --- Logic for Social Media Cards ---
+// 1. Determine which image to use: socialImage first, then heroImage as a fallback.
+const imageForSocials = socialImage ?? heroImage;
+
+// 2. Process the image to get a URL optimized for social media (1200x630 is standard).
+//    This requires `site` to be set in your `astro.config.mjs` to create absolute URLs.
+const optimizedImage = imageForSocials
+	? await getImage({
+			src: imageForSocials,
+			width: 1200,
+			height: 630,
+			format: 'png', // or 'jpeg'
+	  })
+	: null;
+
+// 3. Create the absolute URL needed by Discord, Twitter, etc.
+const absoluteImageUrl = optimizedImage
+	? new URL(optimizedImage.src, Astro.site).href
+	: null;
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+
+		<!-- Open Graph / Facebook / Discord Meta Tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content={Astro.url.href} />
+		{absoluteImageUrl && <meta property="og:image" content={absoluteImageUrl} />}
+
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		{absoluteImageUrl && <meta name="twitter:image" content={absoluteImageUrl} />}
+
 		<style>
 			main {
 				width: calc(100% - 2em);

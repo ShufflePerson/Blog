@@ -3,6 +3,7 @@ title: "How I Bypassed GeForce Now's Security to Run Custom Apps"
 description: "Think outside the box, find unturned stones, that's how you can find vulnerabilities!"
 pubDate: 2025-12-21
 heroImage: "gfn-landing.png"
+socialImage: "./gfn-small.png"
 tags: ["Reverse Engineering", "Geforce Now", "Injection", "Windows"]
 ---
 
