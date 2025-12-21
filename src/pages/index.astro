@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>🧑‍💻 Shuffleperson</h1>
+			<p>
+				I am a developer and reverse engineer based in Estonia. My work focuses on dissecting software to make it do things it wasn't designed to do.
+			</p>
+			<p>
+				I specialize in <strong>Binary and Web Reverse Engineering</strong>, <strong>Game Automation</strong>, and <strong>Fingerprinting Evasion</strong>. I don't just use tools; I build the logic that bypasses restrictions, patches memory, and automates interactions at a low level.
+			</p>
+			<p>
+				From injecting DLLs into cloud gaming services to writing custom deobfuscators for malicious scripts, my projects demonstrate a deep understanding of how systems break.
+			</p>
+			<p>
+				Check out the <a href="/about">About</a> page to see exactly what I've worked on, or view the code on <a href="https://github.com/ShufflePerson">GitHub</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>

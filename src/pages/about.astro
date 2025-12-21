@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="About Me"
+	description="Reverse Engineering & Low-Level Development"
+	pubDate={new Date('December 21 2025')}
+>
+	<p>
+		I'm Shuffleperson. I spend most of my time taking apart compiled applications, deobfuscating complex web scripts, and writing efficient automation software. I have a strong background in both high-level API manipulation and low-level Windows internals.
+	</p>
+
+	<h3>Binary Reverse Engineering & Injection</h3>
+	<p>
+		I work with memory and assembly to modify running processes. A prime example is my <strong>GeforceNowAMD</strong> project. I reverse-engineered the Geforce Now client to understand its hardware checks, then wrote a DLL injection patch that hooks specific functions. This forces the client to unlock the 240fps streaming option for AMD users, a feature natively restricted by the software.
+	</p>
+	<p>
+		Beyond that, I have researched vulnerabilities in cloud gaming services to achieve arbitrary code execution, requiring extensive knowledge of Windows fundamentals and creative attack vectors.
+	</p>
+
+	<h3>Web Reversing & Deobfuscation</h3>
+	<p>
+		Much of my work involves stripping away layers of protection. I wrote <strong>De4Lua</strong> to deobfuscate Lua scripts, often used to hide logic in game mods or malware. On the web side, I am experienced in reversing WASM and heavily obfuscated JavaScript to understand hidden APIs.
+	</p>
+	<p>
+		I applied this to creating <strong>PixelPlaceJS</strong> and automation for <strong>Defly.io</strong>, building wrappers that allow for direct, programmatic interaction with the game servers, bypassing the need for a UI.
+	</p>
+
+	<h3>Fingerprinting & Evasion</h3>
+	<p>
+		I have spent a significant amount of time studying how companies track users. I know how to manipulate browser fingerprints to bypass fraud detection systems. By combining anti-detect browsers, residential proxies, and spoofing techniques, I can maintain low risk-scores in systems designed to flag automation.
+	</p>
+
+	<h3>Performance & AI</h3>
+	<p>
+		Efficiency is the priority. I worked on <strong>AimAhead</strong>, a low-level AI aimbot where the primary goal was raw performance and speed, ensuring the logic runs with minimal overhead.
+	</p>
+
+	<p>
+		My GitHub contains the public side of my research. The rest involves private work in vulnerability research and detection bypass methods.
+	</p>
+</Layout>
