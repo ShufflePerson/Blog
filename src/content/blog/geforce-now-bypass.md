@@ -14,7 +14,7 @@ tags: ["Reverse Engineering", "Geforce Now", "Injection", "Windows"]
 
 So, GeForce Now is great for gaming, but underneath the stream, it's a digital fortress. Most people think it just has a basic anti-cheat, but that's not even close. GFN runs one of the most hardened consumer sandboxes I've ever seen, designed with one goal: the user should only ever be able to play the game. Nothing else. This is the story of how I found a crack in that fortress and blew the doors open.
 
-#### The GFN Fortress: A Look Under the Hood
+####  A Look Under the Hood
 
 Before I show you the exploit, you have to understand what we're up against. GFN's security isn't just a single program; it's a multi-layered system that polices every single action you take.
 
