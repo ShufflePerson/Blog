@@ -8,28 +8,16 @@ import Layout from '../layouts/BlogPost.astro';
 	pubDate={new Date('December 21 2025')}
 >
 	<p>
-		I am This forced the client to unlock features it thought my hardware didn't support. This path also led me into vulnerability research, a developer and reverse engineer based in Estonia. My work is driven by a need to understand the black boxes we interact with every day where I explored ways to achieve arbitrary code execution within cloud gaming environments.
-	</p>
-
-	<p>
-		I. Whether it’s a compiled game client or a heavily obfuscated web application, I focus on deconstructing the logic, finding the constraints, and writing software to bypass them.
+		I am a developer and reverse engineer based in Estonia. My work is driven by a need to understand the black boxes we interact with every day. Whether it’s a compiled game client or a heavily obfuscated web application, I focus on deconstructing the logic, finding the constraints, and writing software to bypass them.
 	</p>
 
 	<p>
 		<strong>Binary Analysis & Windows Internals</strong>
 		<br/>
-		A lot of my research happens at the assembly level. apply that same logic to the web, specifically regarding <strong>network protocols and obfuscation</strong>. I don't like being limited by a User Interface, so I often reverse engineer the internal APIs of games and services to build "headless" automation. For projects like <strong>PixelPlace</strong> and <strong>Defly.io</strong>, I analyzed the WebSocket traffic and HTTP requests to reconstruct the communication protocol. This allowed me to write wrappers that interact directly with the game servers, bypassing the browser entirely My project <strong>GeforceNowAMD</strong> is a direct result of this. I wanted to access the 240. To do this effectively, I often have to deal with heavy obfuscation. I wrote <strong>De4Lua</strong> specifically because I needed a tool to strip away protection layers from Lua scripts to understand the logic hidden inside.
-	</p>
-
-fps streaming option on Geforce Now, which is arbitrarily restricted to specific hardware. To fix this, I had to reverse engineer	<p>
-		The other half of my work is <strong>evasion and fingerprinting</strong>. When you are automating interactions on a large scale, you run into fraud detection systems. I have spent a long time studying how these systems identify the running process to locate the specific instruction sets checking the GPU ID.
+		A lot of my research happens at the assembly level. I learned this by needing to modify running processes to make them behave differently. My project <strong>GeforceNowAMD</strong> is a direct result of this. I wanted to access the 240fps streaming option on Geforce Now, which is arbitrarily restricted to specific hardware vendors. To fix this, I had to reverse engineer the running process to locate the specific instruction sets checking the GPU ID.
 	</p>
 	<p>
-		Once "bot" behavior versus "human" behavior. I know how to manipulate TLS fingerprints, canvas data, and audio contexts I mapped the internal logic, I wrote a custom DLL to patch the memory at runtime. By hooking the validation functions, I forced to make automated requests look legitimate. I work with anti-detect browsers and residential proxies to manage risk scores, ensuring that automated traffic flies under the radar of modern security suites.
-	</p>
-
-	<p>
-		I also dabble in the client to accept my hardware as "supported," unlocking the functionality. This project forced me to get very comfortable with memory scanning, function hooking, and the general architecture of Windows processes. I’ve extended this research into finding vulnerabilities in other cloud gaming services AI, but strictly for performance. <strong>AimAhead</strong> was an experiment in creating a computer vision-based aimbot where, specifically looking for ways to escape the "sandbox" and achieve arbitrary code execution on the host machines.
+		Once I mapped the internal logic, I wrote a custom DLL to patch the memory at runtime. By hooking the validation functions, I forced the client to accept my hardware as "supported," unlocking the functionality. This project forced me to get very comfortable with memory scanning, function hooking, and the general architecture of Windows processes. I’ve extended this research into finding vulnerabilities in other cloud gaming services, specifically looking for ways to escape the "sandbox" and achieve arbitrary code execution on host machines.
 	</p>
 
 	<p>
@@ -38,20 +26,25 @@ fps streaming option on Geforce Now, which is arbitrarily restricted to specific
 		I don't like using slow, browser-based automation tools like Selenium or Puppeteer unless absolutely necessary. I prefer to reverse engineer the underlying API to build lightweight, headless clients.
 	</p>
 	<p>
-		For projects like <strong>Pixel efficiency was the only metric that mattered. Instead of heavy, bloated models, I focused on low-level optimization to ensurePlaceJS</strong> and <strong>Defly.io</strong>, I analyzed the network traffic to understand the custom WebSocket protocols and HTTP endpoints. This often meant diving into WASM blobs or deobfuscating minified JavaScript to find the encryption keys or packet structures the detection logic could run faster than the game loop itself.
+		For projects like <strong>PixelPlaceJS</strong> and <strong>Defly.io</strong>, I analyzed the network traffic to understand the custom WebSocket protocols and HTTP endpoints. This often meant diving into WASM blobs or deobfuscating minified JavaScript to find the encryption keys or packet structures. To do this effectively, I often have to deal with heavy obfuscation. I wrote <strong>De4Lua</strong> specifically because I needed a tool to strip away protection layers from Lua scripts to understand the logic hidden inside. The result is usually a library that can interact with game servers directly—placing pixels or moving entities—without ever rendering a single frame.
 	</p>
 
 	<p>
-		I am currently pivoting from purely exploring these systems to securing them. I know exactly how bots bypass security because I have built the logic. The result is a library that can interact with the game servers directly—placing pixels or moving entities—without ever rendering that powers them.
-	</p>
-
-	<p>
-		You can check out the source code for a single frame of the game. It’s faster, more efficient, and infinitely more scalable.
-	</p>
-
-	<p>
-		<strong>Deobfuscation</strong>
+		<strong>Evasion & Fingerprinting</strong>
 		<br/>
-		You can't automate my public research on <a href="https://github.com/ShufflePerson">GitHub</a>.
+		The other half of my work is ensuring that automation remains undetected. When you interact with services programmatically, you are constantly fighting against fraud detection systems. I have spent a significant amount of time studying how these systems identify "bot" behavior versus "human" behavior.
+	</p>
+	<p>
+		I know how to manipulate TLS fingerprints, canvas data, and audio contexts to make automated requests look legitimate. I work with anti-detect browsers and residential proxies to manage risk scores, ensuring that automated traffic flies under the radar of modern security suites.
+	</p>
+
+	<p>
+		<strong>Performance Logic</strong>
+		<br/>
+		I also work with AI, but strictly for performance. <strong>AimAhead</strong> was an experiment in creating a computer vision-based aimbot where efficiency was the only metric that mattered. Instead of heavy, bloated models, I focused on low-level optimization to ensure the detection logic could run faster than the game loop itself.
+	</p>
+
+	<p>
+		You can check out the source code for my public research on <a href="https://github.com/ShufflePerson">GitHub</a>.
 	</p>
 </Layout>
