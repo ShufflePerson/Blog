@@ -8,21 +8,26 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, socialImage } =
-	Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, socialImage } = Astro.props;
 
-// This logic remains the same. It correctly determines the image.
+// --- Logic to determine and prepare the correct image for social media ---
+
+// 1. Prioritize the `socialImage` if it exists, otherwise fall back to the `heroImage`.
 const imageForSocials = socialImage ?? heroImage;
 
+// 2. Process the chosen image to optimize it for social media embeds (e.g., 1200x630).
+//    This will return `null` if no image was found in the step above.
 const optimizedImage = imageForSocials
 	? await getImage({
 			src: imageForSocials,
 			width: 1200,
 			height: 630,
-			format: 'png',
+			format: 'png', // Using a consistent format is good practice
 	  })
 	: null;
 
+// 3. Create a full, absolute URL for the image. Social media crawlers need this.
+//    This requires you to have `site` configured in your `astro.config.mjs`.
 const absoluteImageUrl = optimizedImage
 	? new URL(optimizedImage.src, Astro.site).href
 	: null;
@@ -30,21 +35,55 @@ const absoluteImageUrl = optimizedImage
 
 <html lang="en">
 	<head>
-		<!--
-		  THE FIX IS HERE:
-		  We pass the `absoluteImageUrl` string into the `image` prop of BaseHead.
-		  If there's no image for the post, we pass `undefined` so BaseHead can use its fallback.
-		-->
+		{/*
+		  This is the main fix. We pass the final `absoluteImageUrl` into the `image` prop
+		  of your BaseHead component. If no image exists, we pass `undefined`, allowing
+		  BaseHead to use its own fallback placeholder correctly.
+		*/}
 		<BaseHead
 			title={title}
 			description={description}
 			image={absoluteImageUrl ?? undefined}
 		/>
 
-		<!-- REMOVE ALL the old, duplicate meta tags from this file. -->
-
 		<style>
-			/* ... your styles ... */
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image img {
+				display: block;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 1324px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+			.date {
+				margin-bottom: 0.5em;
+				color: rgb(var(--gray));
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
 		</style>
 	</head>
 
