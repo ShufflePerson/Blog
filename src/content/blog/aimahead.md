@@ -7,6 +7,8 @@ socialImage: "./aimbot-small.png"
 tags: ["Computer Vision", "C++", "Optimization", "TensorRT", "DirectX"]
 ---
 
+![AimAhead](aimahead.png)
+
 Computer vision is everywhere, but most of it is slow. A Python script running YOLO on a video feed might hit 30, maybe 60 FPS if you're lucky. That's fine for watching security cameras, but it's completely useless when the game you're playing is running at 200 FPS. Your AI is seeing frames that are ancient history. The target isn't there anymore.
 
 This was the problem I wanted to solve with `AimAhead`. The goal wasn't to make an aimbot; the goal was to build a computer vision pipeline so fast and efficient that it could run ahead of the game loop. This meant throwing out the standard Python playbook and getting as close to the hardware as possible.
