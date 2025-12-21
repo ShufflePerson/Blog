@@ -1,7 +1,7 @@
 ---
 title: "Solving the Impossible Squad Join Problem"
 description: "How I reverse engineered EOS and Steam lobbies to fix the Squad server browser."
-pubDate: 2025-12-21
+pubDate: 2025-12-19
 heroImage: "squad-eos-hero.png"
 socialImage: "./squad-eos-small.png"
 tags: ["Reverse Engineering", "Node.js", "Squad", "Steamworks"]
