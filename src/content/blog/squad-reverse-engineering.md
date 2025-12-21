@@ -3,6 +3,7 @@ title: "Solving the Impossible Squad Join Problem"
 description: "How I reverse engineered EOS and Steam lobbies to fix the Squad server browser."
 pubDate: 2025-12-21
 heroImage: "squad-eos-hero.png"
+socialImage: "./squad-eos-small.png"
 tags: ["Reverse Engineering", "Node.js", "Squad", "Steamworks"]
 ---
 If you play [Squad](https://store.steampowered.com/app/393380/Squad/), you know the pain. The in-game server browser has been half-broken for years. Sometimes it doesn't load, sometimes it’s slow, and for a long time, finding your favorite server was a genuine struggle.
