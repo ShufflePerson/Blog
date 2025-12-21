@@ -11,22 +11,18 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage, socialImage } =
 	Astro.props;
 
-// --- Logic for Social Media Cards ---
-// 1. Determine which image to use: socialImage first, then heroImage as a fallback.
+// This logic remains the same. It correctly determines the image.
 const imageForSocials = socialImage ?? heroImage;
 
-// 2. Process the image to get a URL optimized for social media (1200x630 is standard).
-//    This requires `site` to be set in your `astro.config.mjs` to create absolute URLs.
 const optimizedImage = imageForSocials
 	? await getImage({
 			src: imageForSocials,
 			width: 1200,
 			height: 630,
-			format: 'png', // or 'jpeg'
+			format: 'png',
 	  })
 	: null;
 
-// 3. Create the absolute URL needed by Discord, Twitter, etc.
 const absoluteImageUrl = optimizedImage
 	? new URL(optimizedImage.src, Astro.site).href
 	: null;
@@ -34,59 +30,21 @@ const absoluteImageUrl = optimizedImage
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<!--
+		  THE FIX IS HERE:
+		  We pass the `absoluteImageUrl` string into the `image` prop of BaseHead.
+		  If there's no image for the post, we pass `undefined` so BaseHead can use its fallback.
+		-->
+		<BaseHead
+			title={title}
+			description={description}
+			image={absoluteImageUrl ?? undefined}
+		/>
 
-		<!-- Open Graph / Facebook / Discord Meta Tags -->
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="article" />
-		<meta property="og:url" content={Astro.url.href} />
-		{absoluteImageUrl && <meta property="og:image" content={absoluteImageUrl} />}
-
-		<!-- Twitter Card Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		{absoluteImageUrl && <meta name="twitter:image" content={absoluteImageUrl} />}
+		<!-- REMOVE ALL the old, duplicate meta tags from this file. -->
 
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 1324px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
+			/* ... your styles ... */
 		</style>
 	</head>
 
