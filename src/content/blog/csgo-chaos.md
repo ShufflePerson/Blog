@@ -198,9 +198,6 @@ void __stdcall hkCreateMove(int sequence_number, float input_sample_frametime, b
 ```
 Each effect was just another `if` block in this function. The web server acted as the remote control, flipping these booleans on and off to orchestrate the chaos.
 
-Here's a little demo I recorded back in the day showing some of these effects in action:
-(A placeholder for your YouTube video link would go here)
-
 The web server itself was a pretty standard Next.js app using `tmi.js` to listen to Twitch chat. 
 
 CS:GO is gone now, and with it, the specific memory offsets and byte patterns this project relied on are gone too. But the process—the methodology of injection, reversing, and hooking—is timeless. It was a hell of a way to learn, and a perfect send-off to a classic game.
