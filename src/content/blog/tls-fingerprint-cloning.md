@@ -3,7 +3,7 @@ title: "Cloning TLS Fingerprints"
 description: "Your HTTP headers are perfect. Your IP is residential. You still get blocked. Why? Because your handshake screams 'I am a bot'."
 pubDate: 2025-12-22
 heroImage: "TLS-LANDING.png"
-socialImage: "./tls-small.png"
+socialImage: "./TLS-SMALL.png"
 tags: ["NetSec", "C++", "Anti-Bot", "OpenSSL", "Fingerprinting"]
 ---
 
