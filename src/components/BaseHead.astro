@@ -23,6 +23,17 @@ const finalImageUrl = image ?? new URL(FallbackImage.src, Astro.site).href;
 ---
 
 <!-- Global Metadata -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D34N3W3W1P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D34N3W3W1P');
+</script>
+
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
