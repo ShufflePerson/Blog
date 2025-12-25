@@ -43,7 +43,7 @@ The game then trades this Steam ticket for an EOS Access Token. This token is th
 
 The reason the in-game browser lags is mostly client-side processing. The API itself is actually incredibly snappy if you query it right.
 
-The endpoint `matchmaking/v1/.../filter` uses a "Criteria" system. Instead of asking for everything and filtering it locally (like the game does), I can tell the server exactly what I want.
+The endpoint `matchmaking/v1/.../filter` uses a "Criteria" system. Instead of asking for everything and filtering it locally, I can tell the server exactly what I want.
 
 For example, asking for servers that actually have players:
 
